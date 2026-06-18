@@ -10,21 +10,30 @@ touching the vocabulary, and the vocabulary grows without touching site selector
 
 ## Subscribe (in uBlock Origin)
 
-Dashboard → *Filter lists* → *Import…* → paste a raw URL of a file in `dist/`.
+Dashboard → *Filter lists* → scroll to *Import…* → paste a raw link below →
+*Apply changes*. You can stack several (e.g. `us` + `cl`). All files live in
+[`dist/`](https://github.com/benja-opazo/ublock-politics/tree/main/dist).
 
-Each region (`cl`, `us`, …) ships four lists by **tier** — pick your tolerance for
-false positives:
+Tiers are **exclusive slices**: each `<region>-N` list holds *only* that tier. The
+master (`cl.txt` / `us.txt`) is all tiers combined — subscribe to it to block
+everything, or stack individual tiers (e.g. `cl-1` + `cl-2`) for an in-between
+strictness.
 
-| File            | Contains            | For                                  |
-|-----------------|---------------------|--------------------------------------|
-| `<region>-1.txt`| tier 1 only         | cautious — unambiguously political    |
-| `<region>-2.txt`| tier 2 only         | charged terms (crime, geopolitics)    |
-| `<region>-3.txt`| tier 3 only         | tangential / playwords / high-FP      |
-| `<region>-4.txt`| tier 4 only         | extreme false positives — opt-in only |
-| `<region>.txt`  | all tiers (master)  | block everything                      |
+### 🇨🇱 Chile
 
-Tiers are **exclusive slices**. Subscribe to one master (`cl.txt`) to block all, or
-stack individual tiers (`cl-1.txt` + `cl-2.txt`) for an in-between setting.
+- All tiers: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/cl.txt`
+- Tier 1 only — safest: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/cl-1.txt`
+- Tier 2 only: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/cl-2.txt`
+- Tier 3 only: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/cl-3.txt`
+- Tier 4 only — extreme FP: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/cl-4.txt`
+
+### 🇺🇸 United States
+
+- All tiers: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/us.txt`
+- Tier 1 only — safest: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/us-1.txt`
+- Tier 2 only: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/us-2.txt`
+- Tier 3 only: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/us-3.txt`
+- Tier 4 only — extreme FP: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/us-4.txt`
 
 Tier meaning:
 
