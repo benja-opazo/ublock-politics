@@ -1,0 +1,146 @@
+# Word list — Chilean politics. SOURCE OF TRUTH. dist/cl*.txt is generated from this.
+# Edit here, then run: uv run python scripts/generate.py
+# See .claude/skills/curate-words for the editing guide.
+#
+# Tiers (per term; `default_tier` sets the category default, override inline):
+#   1 = unambiguously political / on-topic
+#   2 = strongly associated (crime, security, geopolitics, charged terms)
+#   3 = tangential, playwords, or high false-positive
+#
+# A term is either:
+#   - a plain string         -> matched literally (regex-escaped by the generator)
+#   - { term: x, tier: n }   -> literal with an explicit tier
+#   - { pattern: 're', tier: n } -> raw regex fragment (you own the regex)
+
+meta:
+  region: cl
+  title: Política Chilena
+  description: Filtra el ruido político chileno
+  expires: 4 days
+  last_refreshed: 2026-06-17
+
+categories:
+  - id: politica
+    name: Política
+    description: Figuras, partidos y discurso político general
+    default_tier: 1
+    terms:
+      - boric
+      - kast
+      - kaiser
+      - vallejo
+      - jara
+      - toha
+      - elizalde
+      - monsalve
+      - milei
+      - republicano
+      - comunista
+      - frente amplio
+      - udi
+      - { pattern: 'ev[óo]poli' }
+      - { pattern: 'dem[óo]cratas', tier: 2 }   # partido Demócratas; "demócratas" genérico tiene FP
+      - derecha
+      - izquierda
+      - constituyente
+      - plebiscito
+      - parlamentario
+      - electoral
+      - { term: rn, tier: 3 }        # sigla ambigua
+      - { term: PC, tier: 4, cs: true }   # Partido Comunista; sólo "PC" en mayúsculas
+
+  - id: instituciones
+    name: Instituciones
+    description: Órganos gubernamentales y administrativos
+    default_tier: 1
+    terms:
+      - gobierno
+      - municipalidad
+      - municipio
+      - { pattern: 'senado(?:r(?:es)?)?' }
+      - { pattern: 'diputado(?:s)?' }
+      - { pattern: 'contralor[íi]a' }
+      - seremi
+      - { pattern: 'subsecretar[íi]a' }
+      - ministerio
+      - congreso
+      - servel
+      - La Moneda
+      - alcalde
+      - alcaldesa
+      - { term: muni, tier: 2 }
+      - { term: juez, tier: 2 }
+      - { term: jueces, tier: 2 }
+      - { term: exfiscal, tier: 2 }
+      - { term: fiscal, tier: 2 }
+      - { pattern: 'fiscal[íi]a', tier: 2 }
+      - { term: querella, tier: 2 }
+
+  - id: prevision
+    name: Previsión y Salud
+    description: Pensiones y salud (alta carga política en Chile)
+    default_tier: 2
+    terms:
+      - { term: isapre, tier: 1 }
+      - { term: fonasa, tier: 1 }
+      - pensiones
+      - { term: afp, tier: 3 }       # también agencia de noticias AFP
+
+  - id: violencia
+    name: Violencia
+    description: Sucesos y actos delictivos
+    default_tier: 2
+    terms:
+      - { pattern: 'homicidio(?:s)?' }
+      - { pattern: 'viola(?:ci[óo]n|dor(?:es)?|r)' }
+      - asesinato
+      - femicidio
+      - parricidio
+      - secuestro
+      - tortura
+      - crimen
+      - delito
+
+  - id: seguridad
+    name: Seguridad
+    description: Policía, militares y delitos específicos
+    default_tier: 2
+    terms:
+      - { pattern: 'carabinero(?:s)?' }
+      - { pattern: 'paco(?:s)?' }
+      - pdi
+      - { pattern: 'gendarmer[íi]a' }
+      - { pattern: 'milico(?:s)?' }
+      - { pattern: 'ej[eé]rcito' }
+      - portonazo
+      - encerrona
+      - balacera
+      - sicariato
+      - { pattern: 'narco(?:tr[áa]fico)?' }
+      - detenido
+      - balazo
+      - asalto
+      - tren de aragua
+      - macrozona sur
+      - frontera norte
+      - { pattern: 'extorsi[óo]n' }
+      - mano dura
+      - paz ciudadana
+
+  - id: internacional
+    name: Internacional / DDHH
+    description: Política internacional y derechos humanos
+    default_tier: 2
+    terms:
+      - { pattern: 'd\.?d\.?h\.?h\.?' }
+      - otan
+      - onu
+      - unicef
+      - derechos humanos
+
+  - id: exageradas
+    name: Palabras Exageradas
+    description: Palabras que _podrían_ gatillar discurso político o de IA
+    default_tier: 3
+    terms:
+      - inteligencia       # incluye "inteligencia artificial"

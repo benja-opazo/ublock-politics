@@ -1,0 +1,15 @@
+# Source template — Reddit.
+# The generator builds a regex alternation of the selected terms and substitutes
+# it for {TERMS}. One filter line is emitted per word category.
+#
+# The template owns the wrapper and word boundaries. {TERMS} is replaced by the
+# alternation; {FLAGS} by the regex flags ("i" for case-insensitive terms, empty
+# for case-sensitive ones — the generator emits a separate line per group).
+# Per-term `pattern:` entries are inserted verbatim, so use a pattern when a term
+# needs different boundary behavior than \b...\b.
+#
+# See .claude/skills/site-filters to add another source (youtube, x, ...).
+
+id: reddit
+name: Reddit
+template: 'reddit.com##article:has-text(/\b(?:{TERMS})\b/{FLAGS})'

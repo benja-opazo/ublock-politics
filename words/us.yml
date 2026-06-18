@@ -1,0 +1,230 @@
+# Word list — US politics. SOURCE OF TRUTH. dist/us*.txt is generated from this.
+# Edit here, then run: uv run python scripts/generate.py
+# See .claude/skills/curate-words for the editing guide and the tier definitions.
+
+meta:
+  region: us
+  title: US Politics
+  description: Filters US political and current-events noise
+  expires: 4 days
+  last_refreshed: 2026-06-17
+
+categories:
+  - id: figures
+    name: Figures & Parties
+    description: High-profile individuals
+    default_tier: 1
+    terms:
+      - Trump
+      - Biden
+      - Kamala
+      - Kamala Harris
+      - POTUS
+      - Obama
+      - Clinton
+      - Hillary
+      - RFK
+      - AOC
+      - Alexandria Ocasio-Cortez
+      - JD Vance
+      - Marco Rubio
+      - Noem
+      - Hegseth
+      - Stephen Miller
+      - Marjorie Taylor Greene
+      - MTG
+      - Zohran
+      - Mamdani
+      - Kirk
+      - Ted Cruz
+      - { pattern: 'Zelenskyy?' }
+      - Netanyahu
+      - Newsom
+      - DeSantis
+      - Pelosi
+      - Schumer
+      - McConnell
+      - Bernie Sanders
+      - { term: Sanders, tier: 2 }   # surname alone has FP (Sarah Sanders, etc.)
+      - Tim Walz
+      - Mike Johnson
+
+  - id: labels
+    name: Labels & Ideology
+    description: Partisan and ideological labels
+    default_tier: 1
+    terms:
+      - { pattern: 'Democrats?' }
+      - { pattern: 'Republicans?' }
+      - GOP
+      - MAGA
+      - { pattern: 'Liberals?' }
+      - Libs
+      - { pattern: 'Conservatives?' }
+      - { pattern: 'midterms?' }
+      - { term: Woke, tier: 2 }
+      - { term: DEI, tier: 2 }
+      - { term: Pronouns, tier: 2 }
+      - { term: Fascism, tier: 2 }
+      - { term: Nazi, tier: 2 }
+      - { pattern: 'Left[- ]?wing', tier: 2 }
+      - { pattern: 'Right[- ]?wing', tier: 2 }
+      - { term: Centrist, tier: 2 }
+      - { pattern: 'Communis(?:m|t)', tier: 2 }
+      - { pattern: 'Capitalis(?:m|t)', tier: 2 }
+      - { term: Political, tier: 3 }
+
+  - id: institutions
+    name: Institutions — Government & Law
+    description: Branches of government and legal entities
+    default_tier: 1
+    terms:
+      - Congress
+      - Lawmakers
+      - Senate
+      - House of Reps
+      - DOJ
+      - Constitution
+      - SCOTUS
+      - Supreme Court
+      - White House
+      - { term: ICE, tier: 2 }       # immigration agency vs "ice"
+      - { term: Federal, tier: 2 }
+      - { term: Judge, tier: 2 }
+      - { term: Fiscal, tier: 2 }
+      - { term: Bankruptcy, tier: 2 }
+      - { term: Tariff, tier: 2 }
+      - { term: Union, tier: 2 }
+      - { pattern: 'Strikes?', tier: 2 }
+      - { term: Vote, tier: 2 }
+      - { term: Election, tier: 2 }
+      - { term: shutdown, tier: 2 }
+      - { term: indictment, tier: 2 }
+      - { term: Government, tier: 3 }
+      - { term: United States, tier: 3 }
+      - { term: America, tier: 3 }
+      - { term: president, tier: 3 }
+      - { pattern: 'U\.S(?:\.A)?', tier: 3 }    # U.S, U.S., U.S.A, U.S.A. (not bare "US")
+      - { term: US, tier: 4, cs: true }         # only all-caps "US"; never "us"/"Us"
+
+  - id: tech
+    name: Tech & Billionaires
+    description: Figures and companies dominating political/social discourse
+    default_tier: 2
+    terms:
+      - Elon
+      - Musk
+      - Cybertruck
+      - Tesla
+      - { pattern: 'Zuck(?:erberg)?' }
+      - Palantir
+      - Big Tech
+      - Oligarch
+      - { term: Elmo, tier: 3 }      # playword on Elon; also Sesame Street
+
+  - id: ai
+    name: AI News
+    description: AI hype and product/news noise
+    default_tier: 2
+    terms:
+      - Altman
+      - { pattern: 'Open ?AI' }
+      - ChatGPT
+      - anthropic
+      - Gemini
+      - Grok
+      - Copilot
+      - Nvidia
+      - AGI
+      - LLM
+      - deepfake
+      - { term: Claude, tier: 3 }    # also a common given name (Claude Monet, etc.)
+
+  - id: geopolitics
+    name: Geopolitics & Conflict
+    description: International relations and war-related terms
+    default_tier: 1
+    terms:
+      - Israel
+      - Palestine
+      - Palestinian
+      - Gaza
+      - Mossad
+      - Iran
+      - Tehran
+      - Teheran
+      - Hormuz
+      - Iraq
+      - Russia
+      - Kyiv
+      - War
+      - Missiles
+      - NATO
+      - idf
+      - Putin
+      - Hamas
+      - Ukraine
+      - Hezbollah
+      - Houthi
+      - { term: Drone, tier: 2 }
+      - { term: Nuclear, tier: 2 }
+      - { term: China, tier: 2 }
+      - { term: Taiwan, tier: 2 }
+      - { term: North Korea, tier: 2 }
+      - { term: ceasefire, tier: 2 }
+      - { term: genocide, tier: 2 }
+      - { term: airstrike, tier: 2 }
+      - { term: slava ukraini, tier: 2 }
+      - { term: France, tier: 3 }    # broad country name, high FP
+      - { term: Jew, tier: 2 }
+      - { term: Jews, tier: 2 }
+      - { term: Muslim, tier: 2 }
+      - { pattern: 'Zionis(?:m|ts?)', tier: 2 }
+      - { pattern: 'Anti-?[Zz]ionis(?:m|ts?)', tier: 2 }
+
+  - id: social
+    name: Social Issues & Controversy
+    description: High-controversy social topics
+    default_tier: 2
+    terms:
+      - { pattern: 'Racis(?:m|t)' }
+      - Homophobic
+      - Immigrant
+      - Defund
+      - Corruption
+      - { pattern: 'Protests?' }
+      - Epstein
+      - abortion
+      - shooting
+      - mass shooting
+      - deportation
+      - insurrection
+      - { term: LGBT, tier: 3 }
+      - { term: Jeffrey, tier: 3 }
+      - { term: Karen, tier: 3 }
+      - { term: Idiocracy, tier: 3 }
+      - { term: Measles, tier: 3 }
+      - { term: Transgender, tier: 3 }
+
+  - id: economy
+    name: Economy & Cost of Living
+    description: Economic-anxiety and cost-of-living noise
+    default_tier: 3
+    terms:
+      - Economic
+      - Grocery
+      - Groceries
+      - { term: inflation, tier: 2 }
+      - { term: recession, tier: 2 }
+
+  - id: overzealous
+    name: Overzealous Words
+    description: Words that _could_ trigger political speech
+    default_tier: 3
+    terms:
+      - shadow docket
+      - { pattern: 'project 202[56]' }
+      - { pattern: 'impeach(?:ment)?' }
+      - nationalism
+      - rigged
+      - { term: Historical, tier: 4 }   # extreme FP; tier 4 only

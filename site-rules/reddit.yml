@@ -1,0 +1,16 @@
+# Site-specific rules — Reddit.
+# Raw uBlock filters that target Reddit's DOM/URLs directly (not generated from
+# words). Appended to the reddit output, filtered by tier. Because these depend
+# on Reddit's layout, they must be re-verified when the site changes — see
+# .claude/skills/update-methodology.
+#
+# Each rule: { filter: '<raw uBlock line>', tier: 1|2|3, note: '<optional>' }
+
+id: reddit
+rules:
+  - filter: 'reddit.com##article:has-text(/\b(?:me_irl|meirl|doge)\b/i)'
+    tier: 3
+    note: Reddit meme/noise terms.
+  - filter: 'reddit.com##article:has(a[href^="/r/politics/"])'
+    tier: 1
+    note: Hide feed posts linking to r/politics. VERIFY against current Reddit DOM.
