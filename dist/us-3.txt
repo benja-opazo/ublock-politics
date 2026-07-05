@@ -11,7 +11,7 @@ reddit.com##article:has-text(/\b(?:Political)\b/i)
 
 ! --- Reddit: Institutions — Government & Law ---
 ! Branches of government and legal entities
-reddit.com##article:has-text(/\b(?:Government|United\ States|America|president|U\.S(?:\.A)?)\b/i)
+reddit.com##article:has-text(/\b(?:Government|United\ States|America|president|police|army|U\.S(?:\.A)?)\b/i)
 
 ! --- Reddit: Tech & Billionaires ---
 ! Figures and companies dominating political/social discourse
@@ -36,7 +36,3 @@ reddit.com##article:has-text(/\b(?:Economic|Grocery|Groceries)\b/i)
 ! --- Reddit: Overzealous Words ---
 ! Words that _could_ trigger political speech
 reddit.com##article:has-text(/\b(?:shadow\ docket|project 202[56]|impeach(?:ment)?|nationalism|rigged)\b/i)
-
-! --- Reddit: site-specific ---
-! Reddit meme/noise terms.
-reddit.com##article:has-text(/\b(?:me_irl|meirl|doge)\b/i)

@@ -48,13 +48,16 @@ categories:
       - { term: Sanders, tier: 2 }   # surname alone has FP (Sarah Sanders, etc.)
       - Tim Walz
       - Mike Johnson
+      - Kash Patel
+      - { term: Vance, tier: 2 }     # surname alone has FP (Vance Joy, etc.)
+      - { term: Nixon, tier: 2 }     # historical figure; also a watch/product brand
 
   - id: labels
     name: Labels & Ideology
     description: Partisan and ideological labels
     default_tier: 1
     terms:
-      - { pattern: 'Democrats?' }
+      - { pattern: 'Democrat(?:s|ic)?' }
       - { pattern: 'Republicans?' }
       - GOP
       - MAGA
@@ -84,10 +87,13 @@ categories:
       - Senate
       - House of Reps
       - DOJ
+      - DEA
+      - FBI
       - Constitution
       - SCOTUS
       - Supreme Court
       - White House
+      - Prime Minister
       - { term: ICE, tier: 2 }       # immigration agency vs "ice"
       - { term: Federal, tier: 2 }
       - { term: Judge, tier: 2 }
@@ -104,6 +110,8 @@ categories:
       - { term: United States, tier: 3 }
       - { term: America, tier: 3 }
       - { term: president, tier: 3 }
+      - { term: police, tier: 3 }
+      - { term: army, tier: 3 }
       - { pattern: 'U\.S(?:\.A)?', tier: 3 }    # U.S, U.S., U.S.A, U.S.A. (not bare "US")
       - { term: US, tier: 4, cs: true }         # only all-caps "US"; never "us"/"Us"
 
@@ -116,6 +124,7 @@ categories:
       - Musk
       - Cybertruck
       - Tesla
+      - SpaceX
       - { pattern: 'Zuck(?:erberg)?' }
       - Palantir
       - Big Tech
@@ -156,6 +165,7 @@ categories:
       - Hormuz
       - Iraq
       - Russia
+      - { term: Russian, tier: 2 }   # adjective form; some FP (Russian roulette, etc.)
       - Kyiv
       - War
       - Missiles
@@ -164,6 +174,7 @@ categories:
       - Putin
       - Hamas
       - Ukraine
+      - { term: Ukrainian, tier: 2 }  # adjective form; some FP (Ukrainian food, etc.)
       - Hezbollah
       - Houthi
       - { term: Drone, tier: 2 }
@@ -216,6 +227,16 @@ categories:
       - Groceries
       - { term: inflation, tier: 2 }
       - { term: recession, tier: 2 }
+      - { term: Tax the rich, tier: 1 }
+
+  - id: health
+    name: Health & Pandemic
+    description: COVID-era public-health noise
+    default_tier: 2
+    terms:
+      - covid
+      - vaccine
+      - { term: CDC, tier: 1 }
 
   - id: overzealous
     name: Overzealous Words

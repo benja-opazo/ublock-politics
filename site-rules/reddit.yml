@@ -11,6 +11,33 @@ rules:
   - filter: 'reddit.com##article:has-text(/\b(?:me_irl|meirl|doge)\b/i)'
     tier: 3
     note: Reddit meme/noise terms.
-  - filter: 'reddit.com##article:has(a[href^="/r/politics/"])'
+  # Subreddit names route case-insensitively (r/Politics == r/politics), but the
+  # DOM href isn't guaranteed to always render in the sub's canonical case, so
+  # these match the href attribute case-insensitively (trailing `i` flag).
+  - filter: 'reddit.com##article:has(a[href^="/r/politics/" i])'
     tier: 1
     note: Hide feed posts linking to r/politics. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/worldnews/" i])'
+    tier: 1
+    note: Hide feed posts linking to r/WorldNews. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/news/" i])'
+    tier: 1
+    note: Hide feed posts linking to r/news. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/underreportednews/" i])'
+    tier: 1
+    note: Hide feed posts linking to r/UnderReportedNews. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/europe/" i])'
+    tier: 2
+    note: Hide feed posts linking to r/Europe. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/antiwork/" i])'
+    tier: 2
+    note: Hide feed posts linking to r/AntiWork. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/workreform/" i])'
+    tier: 2
+    note: Hide feed posts linking to r/WorkReform. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/law/" i])'
+    tier: 3
+    note: Hide feed posts linking to r/Law. Broad sub, most content isn't political — high FP. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/technology/" i])'
+    tier: 3
+    note: Hide feed posts linking to r/Technology. Broad sub, most content isn't political/AI news — high FP. VERIFY against current Reddit DOM.

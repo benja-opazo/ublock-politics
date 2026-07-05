@@ -7,7 +7,7 @@
 
 ! --- Reddit: Figures & Parties ---
 ! High-profile individuals
-reddit.com##article:has-text(/\b(?:Sanders)\b/i)
+reddit.com##article:has-text(/\b(?:Sanders|Vance|Nixon)\b/i)
 
 ! --- Reddit: Labels & Ideology ---
 ! Partisan and ideological labels
@@ -19,7 +19,7 @@ reddit.com##article:has-text(/\b(?:ICE|Federal|Judge|Fiscal|Bankruptcy|Tariff|Un
 
 ! --- Reddit: Tech & Billionaires ---
 ! Figures and companies dominating political/social discourse
-reddit.com##article:has-text(/\b(?:Elon|Musk|Cybertruck|Tesla|Zuck(?:erberg)?|Palantir|Big\ Tech|Oligarch)\b/i)
+reddit.com##article:has-text(/\b(?:Elon|Musk|Cybertruck|Tesla|SpaceX|Zuck(?:erberg)?|Palantir|Big\ Tech|Oligarch)\b/i)
 
 ! --- Reddit: AI News ---
 ! AI hype and product/news noise
@@ -27,7 +27,7 @@ reddit.com##article:has-text(/\b(?:Altman|Open ?AI|ChatGPT|anthropic|Gemini|Grok
 
 ! --- Reddit: Geopolitics & Conflict ---
 ! International relations and war-related terms
-reddit.com##article:has-text(/\b(?:Drone|Nuclear|China|Taiwan|North\ Korea|ceasefire|genocide|airstrike|slava\ ukraini|Jew|Jews|Muslim|Zionis(?:m|ts?)|Anti-?[Zz]ionis(?:m|ts?))\b/i)
+reddit.com##article:has-text(/\b(?:Russian|Ukrainian|Drone|Nuclear|China|Taiwan|North\ Korea|ceasefire|genocide|airstrike|slava\ ukraini|Jew|Jews|Muslim|Zionis(?:m|ts?)|Anti-?[Zz]ionis(?:m|ts?))\b/i)
 
 ! --- Reddit: Social Issues & Controversy ---
 ! High-controversy social topics
@@ -36,3 +36,7 @@ reddit.com##article:has-text(/\b(?:Racis(?:m|t)|Homophobic|Immigrant|Defund|Corr
 ! --- Reddit: Economy & Cost of Living ---
 ! Economic-anxiety and cost-of-living noise
 reddit.com##article:has-text(/\b(?:inflation|recession)\b/i)
+
+! --- Reddit: Health & Pandemic ---
+! COVID-era public-health noise
+reddit.com##article:has-text(/\b(?:covid|vaccine)\b/i)

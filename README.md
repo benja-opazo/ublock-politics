@@ -19,6 +19,15 @@ master (`cl.txt` / `us.txt`) is all tiers combined — subscribe to it to block
 everything, or stack individual tiers (e.g. `cl-1` + `cl-2`) for an in-between
 strictness.
 
+Site rules (whole-subreddit blocks, DOM/URL rules) are **not region-specific** —
+they live in their own list, independent of tier and region:
+
+- Subreddits & site rules (all sites, all regions):
+  `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/subreddits.txt`
+
+Stack it with any region's word list for full coverage, or skip it to keep only
+word-based hiding.
+
 ### 🇨🇱 Chile
 
 - All tiers: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/cl.txt`
@@ -65,7 +74,8 @@ uv run python scripts/generate.py --check  # CI: fail if dist/ is stale
 words/<region>.yml      vocabulary: categories of terms, each with a tier  (edit this)
 sources/<site>.yml      per-site filter template using the {TERMS} placeholder
 site-rules/<site>.yml   raw site-specific filters (subreddits, memes), tier-tagged
-scripts/generate.py     words × sources × tier  ->  dist/
+scripts/generate.py     words × sources × tier -> dist/<region>*.txt
+                        site-rules × sources     -> dist/subreddits.txt
 scripts/validate.py     lints tiers, regex, duplicates, templates
 dist/                   generated, subscribable lists
 ```

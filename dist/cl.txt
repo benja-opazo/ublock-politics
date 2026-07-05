@@ -33,9 +33,3 @@ reddit.com##article:has-text(/\b(?:d\.?d\.?h\.?h\.?|otan|onu|unicef|derechos\ hu
 ! --- Reddit: Palabras Exageradas ---
 ! Palabras que _podrían_ gatillar discurso político o de IA
 reddit.com##article:has-text(/\b(?:inteligencia)\b/i)
-
-! --- Reddit: site-specific ---
-! Reddit meme/noise terms.
-reddit.com##article:has-text(/\b(?:me_irl|meirl|doge)\b/i)
-! Hide feed posts linking to r/politics. VERIFY against current Reddit DOM.
-reddit.com##article:has(a[href^="/r/politics/"])

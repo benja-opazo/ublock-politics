@@ -16,7 +16,3 @@ reddit.com##article:has-text(/\b(?:gobierno|municipalidad|municipio|senado(?:r(?
 ! --- Reddit: Previsión y Salud ---
 ! Pensiones y salud (alta carga política en Chile)
 reddit.com##article:has-text(/\b(?:isapre|fonasa)\b/i)
-
-! --- Reddit: site-specific ---
-! Hide feed posts linking to r/politics. VERIFY against current Reddit DOM.
-reddit.com##article:has(a[href^="/r/politics/"])

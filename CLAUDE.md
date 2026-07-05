@@ -11,9 +11,9 @@ it** (site templates), so each evolves independently.
 ## Data flow
 
 ```
-words/<region>.yml  ─┐
-sources/<site>.yml  ─┼─►  scripts/generate.py  ─►  dist/<region>{,-1,-2,-3}.txt
-site-rules/<site>.yml┘
+words/<region>.yml  ─┬─►  scripts/generate.py  ─►  dist/<region>{,-1,-2,-3,-4}.txt
+sources/<site>.yml  ─┘                        └──►  dist/subreddits.txt
+site-rules/<site>.yml──────────────────────────────────┘
 ```
 
 - `words/<region>.yml` — vocabulary grouped into categories; **the source of truth**.
@@ -21,7 +21,8 @@ site-rules/<site>.yml┘
   builds a `|`-alternation of the selected terms and substitutes it in. One filter
   line is emitted per category, per source.
 - `site-rules/<site>.yml` — raw, hand-written filters that target a site's DOM/URLs
-  directly (e.g. whole subreddits). Appended per source, filtered by tier.
+  directly (e.g. whole subreddits). Not region-specific — combined across all
+  sources into the single `dist/subreddits.txt`, independent of `words/`.
 - `dist/` — **generated output, committed to the repo. Never hand-edit.**
 
 ## Term model
@@ -48,7 +49,10 @@ overrides it.
 - **4** — extreme false positives; opt-in only. Often paired with `cs: true`.
 
 `dist/<region>-N.txt` holds tier N **only** (exclusive, N = 1–4). `dist/<region>.txt`
-is the master (all tiers, self-contained — it does not use `!#include`).
+is the master (all tiers, word filters only, self-contained — it does not use
+`!#include`). Site rules (subreddit blocks, etc.) are never mixed into `dist/<region>*`;
+they only appear in `dist/subreddits.txt`, so a subscriber picks words, site rules,
+or both by choosing which lists to import.
 
 ## Invariants
 
