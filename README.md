@@ -20,13 +20,12 @@ everything, or stack individual tiers (e.g. `cl-1` + `cl-2`) for an in-between
 strictness.
 
 Site rules (whole-subreddit blocks, DOM/URL rules) are **not region-specific** —
-they live in their own list, independent of tier and region:
+they're a separate list, independent of tier and region. Stack it with any region's
+word list for full coverage, or skip it to keep only word-based hiding.
 
-- Subreddits & site rules (all sites, all regions):
-  `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/subreddits.txt`
+### 🌐 Subreddits & site rules
 
-Stack it with any region's word list for full coverage, or skip it to keep only
-word-based hiding.
+- All sites, all regions: `https://raw.githubusercontent.com/benja-opazo/ublock-politics/main/dist/subreddits.txt`
 
 ### 🇨🇱 Chile
 
