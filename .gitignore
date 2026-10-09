@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .venv/
+
+# Local scratch: browser profile (Reddit session cookies), DOM dumps, logs
+tmp/

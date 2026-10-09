@@ -94,6 +94,7 @@ categories:
       - Supreme Court
       - White House
       - Prime Minister
+      - Pentagon
       - { term: ICE, tier: 2 }       # immigration agency vs "ice"
       - { term: Federal, tier: 2 }
       - { term: Judge, tier: 2 }
@@ -127,8 +128,10 @@ categories:
       - SpaceX
       - { pattern: 'Zuck(?:erberg)?' }
       - Palantir
+      - Peter Thiel
       - Big Tech
       - Oligarch
+      - { term: Flock, tier: 4 }     # Flock Safety surveillance cameras; "flock" is a common word, opt-in only
       - { term: Elmo, tier: 3 }      # playword on Elon; also Sesame Street
 
   - id: ai
@@ -210,6 +213,8 @@ categories:
       - mass shooting
       - deportation
       - insurrection
+      - { term: confederate, tier: 2 }
+      - { term: fox news, tier: 1 }   # specific phrase, low FP despite "fox" alone being common
       - { term: LGBT, tier: 3 }
       - { term: Jeffrey, tier: 3 }
       - { term: Karen, tier: 3 }

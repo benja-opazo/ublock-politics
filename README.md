@@ -63,9 +63,25 @@ uv sync                                  # create .venv, install deps
 uv run python scripts/validate.py        # lint the YAML data
 uv run python scripts/generate.py        # rebuild dist/ from words + sources
 uv run python scripts/generate.py --check  # CI: fail if dist/ is stale
+uv run python scripts/check_post.py --url "<reddit post url>"   # why would/wouldn't this post be hidden?
 ```
 
 **`dist/` is generated — never edit it by hand.** Edit the YAML and regenerate.
+
+### Debugging a false positive / miss
+
+Reddit filters match a post's title, selftext preview, flair, and subreddit name
+(not just the title), so a post can get hidden by a word that never appears in
+its title. `scripts/check_post.py` replays the same word/site-rule
+matching offline against a post URL (or manually-typed fields) and reports exactly
+which term/tier matched and in which field. For live debugging, uBlock's own
+**Logger** panel (toolbar icon → the chart icon) shows which specific filter fired
+on a given element in real time — the fastest way to confirm a hit or a miss.
+
+If a whole subreddit isn't being hidden, the likely cause is Reddit's DOM: the
+`site-rules/*.yml` filters were written against a specific layout and are marked
+`VERIFY against current Reddit DOM` because they haven't all been checked live —
+see `.claude/skills/update-methodology` to re-verify and fix a broken selector.
 
 ## Layout
 

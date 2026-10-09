@@ -6,7 +6,7 @@
 
 ! --- Reddit: site-specific ---
 ! Reddit meme/noise terms.
-reddit.com##article:has-text(/\b(?:me_irl|meirl|doge)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:me_irl|meirl|doge)\b/i):upward(article)
 ! Hide feed posts linking to r/politics. VERIFY against current Reddit DOM.
 reddit.com##article:has(a[href^="/r/politics/" i])
 ! Hide feed posts linking to r/WorldNews. VERIFY against current Reddit DOM.
@@ -25,3 +25,5 @@ reddit.com##article:has(a[href^="/r/workreform/" i])
 reddit.com##article:has(a[href^="/r/law/" i])
 ! Hide feed posts linking to r/Technology. Broad sub, most content isn't political/AI news — high FP. VERIFY against current Reddit DOM.
 reddit.com##article:has(a[href^="/r/technology/" i])
+! Hide feed posts linking to r/UpliftingNews. Not overtly political but adjacent — high FP. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/upliftingnews/" i])

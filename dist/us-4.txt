@@ -7,8 +7,12 @@
 
 ! --- Reddit: Institutions — Government & Law ---
 ! Branches of government and legal entities
-reddit.com##article:has-text(/\b(?:US)\b/)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:US)\b/):upward(article)
+
+! --- Reddit: Tech & Billionaires ---
+! Figures and companies dominating political/social discourse
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:Flock)\b/i):upward(article)
 
 ! --- Reddit: Overzealous Words ---
 ! Words that _could_ trigger political speech
-reddit.com##article:has-text(/\b(?:Historical)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:Historical)\b/i):upward(article)

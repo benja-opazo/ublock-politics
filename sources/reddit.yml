@@ -8,8 +8,13 @@
 # Per-term `pattern:` entries are inserted verbatim, so use a pattern when a term
 # needs different boundary behavior than \b...\b.
 #
+# Match only the post's visible text (title, body preview, flair, subreddit name),
+# then hide the enclosing feed <article>. Never use :has-text() on article or
+# shreddit-post directly: their textContent includes inline <script> bundle lists
+# (random hashes, 'en-US') that match short terms and hide unrelated posts.
+#
 # See .claude/skills/site-filters to add another source (youtube, x, ...).
 
 id: reddit
 name: Reddit
-template: 'reddit.com##article:has-text(/\b(?:{TERMS})\b/{FLAGS})'
+template: 'reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:{TERMS})\b/{FLAGS}):upward(article)'

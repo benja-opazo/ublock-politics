@@ -46,8 +46,7 @@ categories:
       - plebiscito
       - parlamentario
       - electoral
-      - { term: rn, tier: 3 }        # sigla ambigua
-      - { term: PC, tier: 4, cs: true }   # Partido Comunista; sólo "PC" en mayúsculas
+      - { term: RN, tier: 3, cs: true }  # Renovación Nacional; cs avoids "rn" (right now)
 
   - id: instituciones
     name: Instituciones

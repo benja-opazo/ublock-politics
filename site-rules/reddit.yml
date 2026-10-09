@@ -8,7 +8,7 @@
 
 id: reddit
 rules:
-  - filter: 'reddit.com##article:has-text(/\b(?:me_irl|meirl|doge)\b/i)'
+  - filter: 'reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:me_irl|meirl|doge)\b/i):upward(article)'
     tier: 3
     note: Reddit meme/noise terms.
   # Subreddit names route case-insensitively (r/Politics == r/politics), but the
@@ -41,3 +41,6 @@ rules:
   - filter: 'reddit.com##article:has(a[href^="/r/technology/" i])'
     tier: 3
     note: Hide feed posts linking to r/Technology. Broad sub, most content isn't political/AI news — high FP. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/upliftingnews/" i])'
+    tier: 3
+    note: Hide feed posts linking to r/UpliftingNews. Not overtly political but adjacent — high FP. VERIFY against current Reddit DOM.

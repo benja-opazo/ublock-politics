@@ -7,24 +7,24 @@
 
 ! --- Reddit: Política ---
 ! Figuras, partidos y discurso político general
-reddit.com##article:has-text(/\b(?:dem[óo]cratas)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:dem[óo]cratas)\b/i):upward(article)
 
 ! --- Reddit: Instituciones ---
 ! Órganos gubernamentales y administrativos
-reddit.com##article:has-text(/\b(?:muni|juez|jueces|exfiscal|fiscal|fiscal[íi]a|querella)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:muni|juez|jueces|exfiscal|fiscal|fiscal[íi]a|querella)\b/i):upward(article)
 
 ! --- Reddit: Previsión y Salud ---
 ! Pensiones y salud (alta carga política en Chile)
-reddit.com##article:has-text(/\b(?:pensiones)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:pensiones)\b/i):upward(article)
 
 ! --- Reddit: Violencia ---
 ! Sucesos y actos delictivos
-reddit.com##article:has-text(/\b(?:homicidio(?:s)?|viola(?:ci[óo]n|dor(?:es)?|r)|asesinato|femicidio|parricidio|secuestro|tortura|crimen|delito)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:homicidio(?:s)?|viola(?:ci[óo]n|dor(?:es)?|r)|asesinato|femicidio|parricidio|secuestro|tortura|crimen|delito)\b/i):upward(article)
 
 ! --- Reddit: Seguridad ---
 ! Policía, militares y delitos específicos
-reddit.com##article:has-text(/\b(?:carabinero(?:s)?|paco(?:s)?|pdi|gendarmer[íi]a|milico(?:s)?|ej[eé]rcito|portonazo|encerrona|balacera|sicariato|narco(?:tr[áa]fico)?|detenido|balazo|asalto|tren\ de\ aragua|macrozona\ sur|frontera\ norte|extorsi[óo]n|mano\ dura|paz\ ciudadana)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:carabinero(?:s)?|paco(?:s)?|pdi|gendarmer[íi]a|milico(?:s)?|ej[eé]rcito|portonazo|encerrona|balacera|sicariato|narco(?:tr[áa]fico)?|detenido|balazo|asalto|tren\ de\ aragua|macrozona\ sur|frontera\ norte|extorsi[óo]n|mano\ dura|paz\ ciudadana)\b/i):upward(article)
 
 ! --- Reddit: Internacional / DDHH ---
 ! Política internacional y derechos humanos
-reddit.com##article:has-text(/\b(?:d\.?d\.?h\.?h\.?|otan|onu|unicef|derechos\ humanos)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:d\.?d\.?h\.?h\.?|otan|onu|unicef|derechos\ humanos)\b/i):upward(article)

@@ -7,12 +7,12 @@
 
 ! --- Reddit: Política ---
 ! Figuras, partidos y discurso político general
-reddit.com##article:has-text(/\b(?:boric|kast|kaiser|vallejo|jara|toha|elizalde|monsalve|milei|republicano|comunista|frente\ amplio|udi|ev[óo]poli|derecha|izquierda|constituyente|plebiscito|parlamentario|electoral)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:boric|kast|kaiser|vallejo|jara|toha|elizalde|monsalve|milei|republicano|comunista|frente\ amplio|udi|ev[óo]poli|derecha|izquierda|constituyente|plebiscito|parlamentario|electoral)\b/i):upward(article)
 
 ! --- Reddit: Instituciones ---
 ! Órganos gubernamentales y administrativos
-reddit.com##article:has-text(/\b(?:gobierno|municipalidad|municipio|senado(?:r(?:es)?)?|diputado(?:s)?|contralor[íi]a|seremi|subsecretar[íi]a|ministerio|congreso|servel|La\ Moneda|alcalde|alcaldesa)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:gobierno|municipalidad|municipio|senado(?:r(?:es)?)?|diputado(?:s)?|contralor[íi]a|seremi|subsecretar[íi]a|ministerio|congreso|servel|La\ Moneda|alcalde|alcaldesa)\b/i):upward(article)
 
 ! --- Reddit: Previsión y Salud ---
 ! Pensiones y salud (alta carga política en Chile)
-reddit.com##article:has-text(/\b(?:isapre|fonasa)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:isapre|fonasa)\b/i):upward(article)

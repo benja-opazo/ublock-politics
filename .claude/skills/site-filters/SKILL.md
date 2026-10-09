@@ -25,6 +25,10 @@ template: 'youtube.com##ytd-rich-item-renderer:has-text(/\b(?:{TERMS})\b/i)'
   Choose the cosmetic selector for the unit you want to hide (a feed card, a
   comment, a search result) — find it with uBlock's element picker (see
   `update-methodology`).
+- Apply `:has-text()` only to elements holding user-visible text, then climb to the
+  card with `:upward(<card>)`. `:has-text()` tests `textContent`, which includes
+  inline `<script>`/`<style>` text — on a whole card that causes bulk false
+  positives (see `sources/reddit.yml`).
 - If a term needs different boundaries than the template's `\b…\b`, express it as a
   `pattern:` in the word list instead of changing the template.
 

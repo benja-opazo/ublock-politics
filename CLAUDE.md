@@ -71,7 +71,18 @@ uv sync
 uv run python scripts/validate.py            # lint
 uv run python scripts/generate.py            # build dist/
 uv run python scripts/generate.py --check    # verify dist/ is current
+uv run python scripts/check_post.py --url "<reddit post url>"   # would this post be hidden, and why?
 ```
+
+`check_post.py` replays word + site-rule matching offline against a post's title/
+selftext/flair/subreddit (fetched from a URL, or typed in) — useful because
+Reddit filters match title + selftext + flair + subreddit name, not just the title,
+so a "false positive" is often a flair or body match, not a bad regex.
+
+Never put `:has-text()` on a whole card (`article`, `shreddit-post`): its
+`textContent` includes inline `<script>` bundle lists (random hashes, `en-US`)
+that match short terms and hide unrelated posts in bulk. Match only text-bearing
+descendants and climb with `:upward(<card>)` — see `sources/reddit.yml`.
 
 ## Tasks → skills
 

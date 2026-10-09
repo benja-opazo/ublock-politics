@@ -7,32 +7,32 @@
 
 ! --- Reddit: Labels & Ideology ---
 ! Partisan and ideological labels
-reddit.com##article:has-text(/\b(?:Political)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:Political)\b/i):upward(article)
 
 ! --- Reddit: Institutions — Government & Law ---
 ! Branches of government and legal entities
-reddit.com##article:has-text(/\b(?:Government|United\ States|America|president|police|army|U\.S(?:\.A)?)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:Government|United\ States|America|president|police|army|U\.S(?:\.A)?)\b/i):upward(article)
 
 ! --- Reddit: Tech & Billionaires ---
 ! Figures and companies dominating political/social discourse
-reddit.com##article:has-text(/\b(?:Elmo)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:Elmo)\b/i):upward(article)
 
 ! --- Reddit: AI News ---
 ! AI hype and product/news noise
-reddit.com##article:has-text(/\b(?:Claude)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:Claude)\b/i):upward(article)
 
 ! --- Reddit: Geopolitics & Conflict ---
 ! International relations and war-related terms
-reddit.com##article:has-text(/\b(?:France)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:France)\b/i):upward(article)
 
 ! --- Reddit: Social Issues & Controversy ---
 ! High-controversy social topics
-reddit.com##article:has-text(/\b(?:LGBT|Jeffrey|Karen|Idiocracy|Measles|Transgender)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:LGBT|Jeffrey|Karen|Idiocracy|Measles|Transgender)\b/i):upward(article)
 
 ! --- Reddit: Economy & Cost of Living ---
 ! Economic-anxiety and cost-of-living noise
-reddit.com##article:has-text(/\b(?:Economic|Grocery|Groceries)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:Economic|Grocery|Groceries)\b/i):upward(article)
 
 ! --- Reddit: Overzealous Words ---
 ! Words that _could_ trigger political speech
-reddit.com##article:has-text(/\b(?:shadow\ docket|project 202[56]|impeach(?:ment)?|nationalism|rigged)\b/i)
+reddit.com##shreddit-post :is(a[slot="title"], shreddit-post-text-body, shreddit-post-flair, [slot="credit-bar"] faceplate-hovercard > a):has-text(/\b(?:shadow\ docket|project 202[56]|impeach(?:ment)?|nationalism|rigged)\b/i):upward(article)
