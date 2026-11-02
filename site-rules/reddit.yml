@@ -44,3 +44,30 @@ rules:
   - filter: 'reddit.com##article:has(a[href^="/r/upliftingnews/" i])'
     tier: 3
     note: Hide feed posts linking to r/UpliftingNews. Not overtly political but adjacent — high FP. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/epstein/" i])'
+    tier: 1
+    note: Hide feed posts linking to r/Epstein. Epstein files/case discussion. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/murderedbywords/" i])'
+    tier: 2
+    note: Hide feed posts linking to r/MurderedByWords. Heavily political comebacks. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/getnoted/" i])'
+    tier: 2
+    note: Hide feed posts linking to r/GetNoted. Community-note screenshots, mostly political. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/pourstea/" i])'
+    tier: 2
+    note: Hide feed posts linking to r/PoursTea. Screenshot/meme sub, frequently political. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/countwithchickenlady/" i])'
+    tier: 2
+    note: Hide feed posts linking to r/countwithchickenlady. Daily count posts with political commentary. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/sipstea/" i])'
+    tier: 3
+    note: Hide feed posts linking to r/SipsTea. Broad meme/screenshot sub, often political — high FP. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/damnthatsinteresting/" i])'
+    tier: 3
+    note: Hide feed posts linking to r/Damnthatsinteresting. Broad sub, frequent political/news posts — high FP. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/interesting/" i])'
+    tier: 3
+    note: Hide feed posts linking to r/Interesting. Broad sub, frequent political/news posts — high FP. VERIFY against current Reddit DOM.
+  - filter: 'reddit.com##article:has(a[href^="/r/interestingasfuck/" i])'
+    tier: 3
+    note: Hide feed posts linking to r/interestingasfuck. Broad sub, frequent political/news posts — high FP. VERIFY against current Reddit DOM.

@@ -27,3 +27,21 @@ reddit.com##article:has(a[href^="/r/law/" i])
 reddit.com##article:has(a[href^="/r/technology/" i])
 ! Hide feed posts linking to r/UpliftingNews. Not overtly political but adjacent — high FP. VERIFY against current Reddit DOM.
 reddit.com##article:has(a[href^="/r/upliftingnews/" i])
+! Hide feed posts linking to r/Epstein. Epstein files/case discussion. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/epstein/" i])
+! Hide feed posts linking to r/MurderedByWords. Heavily political comebacks. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/murderedbywords/" i])
+! Hide feed posts linking to r/GetNoted. Community-note screenshots, mostly political. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/getnoted/" i])
+! Hide feed posts linking to r/PoursTea. Screenshot/meme sub, frequently political. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/pourstea/" i])
+! Hide feed posts linking to r/countwithchickenlady. Daily count posts with political commentary. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/countwithchickenlady/" i])
+! Hide feed posts linking to r/SipsTea. Broad meme/screenshot sub, often political — high FP. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/sipstea/" i])
+! Hide feed posts linking to r/Damnthatsinteresting. Broad sub, frequent political/news posts — high FP. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/damnthatsinteresting/" i])
+! Hide feed posts linking to r/Interesting. Broad sub, frequent political/news posts — high FP. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/interesting/" i])
+! Hide feed posts linking to r/interestingasfuck. Broad sub, frequent political/news posts — high FP. VERIFY against current Reddit DOM.
+reddit.com##article:has(a[href^="/r/interestingasfuck/" i])
